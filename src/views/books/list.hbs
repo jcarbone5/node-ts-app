@@ -1,0 +1,28 @@
+<div class="row">
+    {{#if Books}}
+        {{#each Books}}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ imageURL }}" alt="{{ name }}" class="card-img-top" style="object-fit: cover; height: 250px">
+                    <div class="card-body">
+                        <h4>{{ name }}</h4>
+                        <p class="text-muted">{{ author }}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                        <div class="btn-group">
+                            <a href="/books/edit/{{ _id }}" class="btn btn-secondary">Update</a>
+                            <a href="/books/remove/{{ _id }}" class="btn btn-danger">Remove</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <div class="col-md-12">
+            <div class="alert alert-warning">
+                There are no books
+            </div>
+        </div>
+    {{/if}}
+
+</div>
